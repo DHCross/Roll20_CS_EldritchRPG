@@ -1,0 +1,70 @@
+.sheet-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sheet-table th,
+.sheet-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.sheet-table th {
+  background-color: darkgreen;
+  color: white;
+}
+
+.sheet-table select {
+  width: 60px;
+}
+
+.sheet-table ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.sheet-table ul li {
+  list-style-type: none;
+}
+
+.sheet-table td[style*="text-indent: 10px;"] {
+  text-indent: 10px;
+}
+
+.sheet-table td[style*="text-indent: 20px;"] {
+  text-indent: 20px;
+}
+
+.sheet-table th[colspan="2"],
+.sheet-table td[colspan="2"] {
+  text-align: center;
+}
+
+.sheet-table th:nth-child(1),
+.sheet-table th:nth-child(2) {
+  width: 25%;
+}
+
+.sheet-table th:nth-child(3),
+.sheet-table th:nth-child(4),
+.sheet-table td:nth-child(3),
+.sheet-table td:nth-child(4) {
+  width: 20%;
+}
+
+.sheet-table th:nth-child(5),
+.sheet-table th:nth-child(6),
+.sheet-table td:nth-child(5),
+.sheet-table td:nth-child(6) {
+  width: 25%;
+}
+
+.sheet-table tr:nth-child(4) th,
+.sheet-table tr:nth-child(4) td,
+.sheet-table tr:nth-child(7) th,
+.sheet-table tr:nth-child(7) td,
+.sheet-table tr:nth-child(8) th,
+.sheet-table tr:nth-child(8) td {
+  width: 25%;
+}
