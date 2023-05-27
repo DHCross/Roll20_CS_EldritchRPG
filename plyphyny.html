@@ -485,8 +485,55 @@
       setAttr('mana_point_pool', manaPointPool);
     }
     
+    function updateActiveDefensePool() {
+      // Get the values of the prowess, agility, and melee attributes.
+      const prowess = getAttr('prowess');
+      const agility = getAttr('agility');
+      const melee = getAttr('melee');
+    
+      // Calculate the active defense pool.
+      const activeDefensePool = prowess + agility + melee;
+    
+      // Set the active defense pool.
+      setAttr('active_defense_pool', activeDefensePool);
+    }
+    
+    function updatePassiveDefensePool() {
+      // Get the values of the fortitude, endurance, and strength attributes.
+      const fortitude = getAttr('fortitude');
+      const endurance = getAttr('endurance');
+      const strength = getAttr('strength');
+    
+      // Calculate the passive defense pool.
+      const passiveDefensePool = fortitude + endurance + strength;
+    
+      // Set the passive defense pool.
+      setAttr('passive_defense_pool', passiveDefensePool);
+    }
+    
+    function updateSpiritPoints() {
+      // Get the values of the competence and willpower attributes.
+      const competence = getAttr('competence');
+      const willpower = getAttr('willpower');
+    
+      // Calculate the spirit points.
+      const spiritPoints = competence + willpower;
+    
+      // Set the spirit points.
+      setAttr('spirit_points', spiritPoints);
+    }
+    
     on('change:prowess change:agility change:melee', (eventInfo) => {
       updateHitPointPools();
+      updateActiveDefensePool();
+    });
+    
+    on('change:fortitude change:endurance change:strength', (eventInfo) => {
+      updatePassiveDefensePool();
+    });
+    
+    on('change:competence change:willpower', (eventInfo) => {
+      updateSpiritPoints();
     });
     
     </script>
