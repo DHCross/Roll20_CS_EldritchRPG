@@ -468,38 +468,28 @@
     </tr>
   </table>
 
-  <script>
+  <script type="text/worker">
+
     function updateHitPointPools() {
-      // Get the current values of the attributes.
-      getAttrs(['attr_prowess', 'attr_agility', 'attr_melee', 'attr_fortitude', 'attr_endurance', 'attr_strength', 'attr_competence', 'attr_willpower'], values => {
-        let prowess = Number(values.attr_prowess);
-        let agility = Number(values.attr_agility);
-        let melee = Number(values.attr_melee);
-        let fortitude = Number(values.attr_fortitude);
-        let endurance = Number(values.attr_endurance);
-        let strength = Number(values.attr_strength);
-        let competence = Number(values.attr_competence);
-        let willpower = Number(values.attr_willpower);
+      // Get the values of the prowess, agility, and melee attributes.
+      const prowess = getAttr('prowess');
+      const agility = getAttr('agility');
+      const melee = getAttr('melee');
     
-        // Calculate the maximum values of the hit point pools.
-        let maxActiveDefenseHp = prowess + agility + melee;
-        let maxPassiveDefenseHp = fortitude + endurance + strength;
-        let maxSpiritPoints = competence + willpower;
+      // Calculate the hit point pools.
+      const hitPointPool = prowess + agility + melee;
+      const manaPointPool = prowess + agility + melee;
     
-        // Set the values of the maximum hit point pools in the character sheet.
-        setAttrs({
-          attr_max_active_defense_hp: maxActiveDefenseHp,
-          attr_max_passive_defense_hp: maxPassiveDefenseHp,
-          attr_max_spirit_points: maxSpiritPoints
-        });
-      });
+      // Set the hit point and mana point pools.
+      setAttr('hit_point_pool', hitPointPool);
+      setAttr('mana_point_pool', manaPointPool);
     }
     
-    // Listen for changes to the attributes.
-    on('change:attr_prowess change:attr_agility change:attr_melee', updateHitPointPools);
-    on('change:attr_fortitude change:attr_endurance change:attr_strength', updateHitPointPools);
-    on('change:attr_competence change:attr_willpower', updateHitPointPools);
-    </script>  
+    on('change:prowess change:agility change:melee', (eventInfo) => {
+      updateHitPointPools();
+    });
+    
+    </script>
 </body>
 </html>
 
