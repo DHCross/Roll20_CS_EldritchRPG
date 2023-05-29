@@ -426,120 +426,53 @@
         </tr>
     
   </table>
-  <!DOCTYPE html>
-<html>
-<head>
-  <title>My Eldritch 2nd Edition Character Sheet</title>
-</head>
-<body>
-  <h2>Hit Point Pools</h2>
-  <table class="sheet-table">
-    <tr>
-      <th>Pool</th>
-      <th>Current</th>
-      <th>Max</th>
-    </tr>
-    <tr>
-      <td>Active Defense</td>
-      <td>
-        <input type="number" name="current_active_defense_hp" value="0">
-      </td>
-      <td>
-        <input type="number" name="max_active_defense_hp" readonly>
-      </td>
-    </tr>
-    <tr>
-      <td>Passive Defense</td>
-      <td>
-        <input type="number" name="current_passive_defense_hp" value="0">
-      </td>
-      <td>
-        <input type="number" name="max_passive_defense_hp" readonly>
-      </td>
-    </tr>
-    <tr>
-      <td>Spirit Points</td>
-      <td>
-        <input type="number" name="current_spirit_points" value="0">
-      </td>
-      <td>
-        <input type="number" name="max_spirit_points" readonly>
-      </td>
-    </tr>
-  </table>
+  <tr>
+    <td>Hit Points</td>
+    <td>
+      <input type="number" name="current_hit_points" value="0">
+    </td>
+    <td>
+      <input type="number" name="max_hit_points" readonly>
+    </td>
+  </tr>
+  <tr>
+    <td>Passive Defense</td>
+    <td>
+      <input type="number" name="current_passive_defense_hp" value="0">
+    </td>
+    <td>
+      <input type="number" name="max_passive_defense_hp" readonly>
+    </td>
+  </tr>
+  <tr>
+    <td>Spirit Points</td>
+    <td>
+      <input type="number" name="current_spirit_points" value="0">
+    </td>
+    <td>
+      <input type="number" name="max_spirit_points" readonly>
+    </td>
+  </tr>
+</table>
 
-  <script type="text/worker">
-
-    function updateHitPointPools() {
-      // Get the values of the prowess, agility, and melee attributes.
-      const prowess = getAttr('prowess');
-      const agility = getAttr('agility');
-      const melee = getAttr('melee');
-    
-      // Calculate the hit point pools.
-      const hitPointPool = prowess + agility + melee;
-      const manaPointPool = prowess + agility + melee;
-    
-      // Set the hit point and mana point pools.
-      setAttr('hit_point_pool', hitPointPool);
-      setAttr('mana_point_pool', manaPointPool);
-    }
-    
-    function updateActiveDefensePool() {
-      // Get the values of the prowess, agility, and melee attributes.
-      const prowess = getAttr('prowess');
-      const agility = getAttr('agility');
-      const melee = getAttr('melee');
-    
-      // Calculate the active defense pool.
-      const activeDefensePool = prowess + agility + melee;
-    
-      // Set the active defense pool.
-      setAttr('active_defense_pool', activeDefensePool);
-    }
-    
-    function updatePassiveDefensePool() {
-      // Get the values of the fortitude, endurance, and strength attributes.
-      const fortitude = getAttr('fortitude');
-      const endurance = getAttr('endurance');
-      const strength = getAttr('strength');
-    
-      // Calculate the passive defense pool.
-      const passiveDefensePool = fortitude + endurance + strength;
-    
-      // Set the passive defense pool.
-      setAttr('passive_defense_pool', passiveDefensePool);
-    }
-    
-    function updateSpiritPoints() {
-      // Get the values of the competence and willpower attributes.
-      const competence = getAttr('competence');
-      const willpower = getAttr('willpower');
-    
-      // Calculate the spirit points.
-      const spiritPoints = competence + willpower;
-    
-      // Set the spirit points.
-      setAttr('spirit_points', spiritPoints);
-    }
-    
-    on('change:prowess change:agility change:melee', (eventInfo) => {
-      updateHitPointPools();
-      updateActiveDefensePool();
+<script>
+  on('change:competence change:adroitness change:skulduggery_focus change:melee_focus change:arcane_focus', () => {
+    getAttrs(['competence', 'adroitness', 'skulduggery_focus', 'melee_focus', 'arcane_focus'], values => {
+      const competence = +values.competence || 0;
+      const adroitness = +values.adroitness || 0;
+      const skulduggeryFocus = +values.skulduggery_focus || 0;
+      const meleeFocus = +values.melee_focus || 0;
+      const arcaneFocus = +values.arcane_focus || 0;
+      const hitPoints = competence + adroitness + meleeFocus;
+      const manaPoints = competence + adroitness + arcaneFocus;
+      const defense = competence + adroitness + skulduggeryFocus;
+      setAttrs({
+        hit_points: hitPoints,
+        mana_points: manaPoints,
+        defense: defense
+      });
     });
-    
-    on('change:fortitude change:endurance change:strength', (eventInfo) => {
-      updatePassiveDefensePool();
-    });
-    
-    on('change:competence change:willpower', (eventInfo) => {
-      updateSpiritPoints();
-    });
-    
-    </script>
+  });
+</script>
 </body>
 </html>
-
-</body>
-</html>
-
