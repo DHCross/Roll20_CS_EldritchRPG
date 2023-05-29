@@ -426,53 +426,60 @@
         </tr>
     
   </table>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>My Eldritch 2nd Edition Character Sheet</title>
+</head>
+<body>
+  <h2>Hit Point Pools</h2>
+  <table class="sheet-table">
+    <tr>
+      <th>Pool</th>
+      <th>Current</th>
+      <th>Max</th>
+    </tr>
+    <tr>
+      <td>Active Defense</td>
+      <td>
+        <input type="number" name="current_active_defense_hp" value="0">
+      </td>
+      <td>
+        <input type="number" name="max_active_defense_hp" readonly>
+      </td>
+    </tr>
+    <tr>
+      <td>Passive Defense</td>
+      <td>
+        <input type="number" name="current_passive_defense_hp" value="0">
+      </td>
+      <td>
+        <input type="number" name="max_passive_defense_hp" readonly>
+      </td>
+    </tr>
+    <tr>
+      <td>Spirit Points</td>
+      <td>
+        <input type="number" name="current_spirit_points" value="0">
+      </td>
+      <td>
+        <input type="number" name="max_spirit_points" readonly>
+      </td>
+    </tr>
+ <table>
   <tr>
-    <td>Hit Points</td>
-    <td>
-      <input type="number" name="current_hit_points" value="0">
-    </td>
-    <td>
-      <input type="number" name="max_hit_points" readonly>
-    </td>
+    <td>Active Defense</td>
+    <td><input type="number" name="hit_points_current" value="0"></td>
+    <td><input type="number" name="hit_points_max" value="0"></td>
   </tr>
   <tr>
     <td>Passive Defense</td>
-    <td>
-      <input type="number" name="current_passive_defense_hp" value="0">
-    </td>
-    <td>
-      <input type="number" name="max_passive_defense_hp" readonly>
-    </td>
+    <td><input type="number" name="passive_defense_current" value="0"></td>
+    <td><input type="number" name="passive_defense_max" value="0"></td>
   </tr>
   <tr>
     <td>Spirit Points</td>
-    <td>
-      <input type="number" name="current_spirit_points" value="0">
-    </td>
-    <td>
-      <input type="number" name="max_spirit_points" readonly>
-    </td>
+    <td><input type="number" name="spirit_points_current" value="0"></td>
+    <td><input type="number" name="spirit_points_max" value="0"></td>
   </tr>
 </table>
-
-<script>
-  on('change:competence change:adroitness change:skulduggery_focus change:melee_focus change:arcane_focus', () => {
-    getAttrs(['competence', 'adroitness', 'skulduggery_focus', 'melee_focus', 'arcane_focus'], values => {
-      const competence = +values.competence || 0;
-      const adroitness = +values.adroitness || 0;
-      const skulduggeryFocus = +values.skulduggery_focus || 0;
-      const meleeFocus = +values.melee_focus || 0;
-      const arcaneFocus = +values.arcane_focus || 0;
-      const hitPoints = competence + adroitness + meleeFocus;
-      const manaPoints = competence + adroitness + arcaneFocus;
-      const defense = competence + adroitness + skulduggeryFocus;
-      setAttrs({
-        hit_points: hitPoints,
-        mana_points: manaPoints,
-        defense: defense
-      });
-    });
-  });
-</script>
-</body>
-</html>
