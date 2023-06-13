@@ -1,78 +1,474 @@
-<table>
-  <tr>
-    <td>Prowess</td>
-    <td><input type="number" name="prowess" value="0" onchange="updateAttributes()"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Agility</td>
-    <td><input type="number" name="agility" value="0" onchange="updateAttributes()"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Melee</td>
-    <td><input type="number" name="melee" value="0" onchange="updateAttributes()"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Fortitude</td>
-    <td><input type="number" name="fortitude" value="0" onchange="updateAttributes()"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Endurance</td>
-    <td><input type="number" name="endurance" value="0" onchange="updateAttributes()"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Strength</td>
-    <td><input type="number" name="strength" value="0" onchange="updateAttributes()"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Competence</td>
-    <td><input type="number" name="competence" value="0" onchange="updateAttributes()"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Willpower</td>
-    <td><input type="number" name="willpower" value="0" onchange="updateAttributes()"></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Active Defense</td>
-    <td><input type="number" name="active_defense_hp" value="0" readonly></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Passive Defense</td>
-    <td><input type="number" name="passive_defense_hp" value="0" readonly></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Spirit Points</td>
-    <td><input type="number" name="spirit_points" value="0" readonly></td>
-    <td><input type="number" name="max_spirit_points" value="0" readonly></td>
-  </tr>
-</table>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eldritch RPG</title>
+  <link rel="stylesheet" href="plyphyny.css">
+</head>
+<body>
+  <h1>My Indie Character Sheet</h1>
+  <p>This is a character sheet for my indie RPG system.</p>
+  <h2>Attributes</h2>
+  <table class="sheet-table">
+    <tr>
+      <th>Ability</th>
+      <th>Specialization</th>
+      <th>Focus</th>
+    </tr>    
+    <!-- Competence -->
+    <tr>
+      <td>
+        Competence
+        <select name="competence">
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+          <option value="12">12</option>
+        </select>
+      </td>
+      
+      <!-- Adroitness -->
+      <td>
+        Adroitness
+        <select name="adroitness">
+          <option value="0">0</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+        </select>
+      </td>
+      <td>
+        <!-- Focuses for Adroitness -->
+        <ul>
+          <li>
+            Skulduggery Focus
+            <select name="skulduggery_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+          <li>
+            Cleverness Focus
+            <select name="cleverness_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+        </ul>
+      </td>
+    </tr>
 
-<script>
-  function updateAttributes() {
-    var prowess = parseInt(document.getElementsByName("prowess")[0].value);
-    var agility = parseInt(document.getElementsByName("agility")[0].value);
-    var melee = parseInt(document.getElementsByName("melee")[0].value);
-    var fortitude = parseInt(document.getElementsByName("fortitude")[0].value);
-    var endurance = parseInt(document.getElementsByName("endurance")[0].value);
-    var strength = parseInt(document.getElementsByName("strength")[0].value);
-    var competence = parseInt(document.getElementsByName("competence")[0].value);
-    var willpower = parseInt(document.getElementsByName("willpower")[0].value);
-    var activeDefense = prowess + agility + melee;
-    var passiveDefense = fortitude + endurance + strength;
-    var spiritPoints = competence + willpower;
-    document.getElementsByName("active_defense_hp")[0].value = activeDefense;
-    document.getElementsByName("passive_defense_hp")[0].value = passiveDefense;
-    document.getElementsByName("spirit_points")[0].value = spiritPoints;
-  }
-</script>
+    <!-- Expertise -->
+    <tr>
+      <td></td>
+      <td>
+        Expertise
+        <select name="expertise">
+          <option value="0">0</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+        </select>
+      </td>
+      <td>
+        <!-- Focuses for Expertise -->
+        <ul>
+          <li>
+            Wizardry Focus
+            <select name="wizardry_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+          <li>
+            Theurgy Focus
+            <select name="theurgy_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <!-- Perception -->
+    <tr>
+      <td></td>
+      <td>
+        Perception
+        <select name="perception">
+          <option value="0">0</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+        </select>
+      </td>
+      <td>
+        <!-- Focuses for Perception -->
+        <ul>
+          <li>
+            Alertness Focus
+            <select name="alertness_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+          <li>
+            Perspicacity Focus
+            <select name="perspicacity_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <!-- Prowess -->
+    <tr>
+      <td>
+        Prowess
+        <select name="prowess">
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+          <option value="12">12</option>
+        </select>
+      </td>
+      
+      <!-- Agility -->
+      <td>
+        Agility
+        <select name="agility">
+          <option value="0">0</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+        </select>
+      </td>
+      <td>
+        <!-- Focuses for Agility -->
+        <ul>
+          <li>
+            Speed Focus
+            <select name="speed_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+          <li>
+            Reaction Focus
+            <select name="reaction_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <!-- Melee -->
+    <tr>
+      <td></td>
+      <td>
+        Melee
+        <select name="melee">
+          <option value="0">0</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+        </select>
+      </td>
+      <td>
+        <!-- Focuses for Melee -->
+        <ul>
+          <li>
+            Threat Focus
+            <select name="threat_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+          <li>
+            Finesse Focus
+            <select name="finesse_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+        </ul>
+      </td>
+    </tr>
+
+    <!-- Precision -->
+    <tr>
+      <td></td>
+      <td>
+        Precision
+        <select name="precision">
+          <option value="0">0</option>
+          <option value="4">4</option>
+          <option value="6">6</option>
+          <option value="8">8</option>
+          <option value="10">10</option>
+        </select>
+      </td>
+      <td>
+        <!-- Focuses for Precision -->
+        <ul>
+          <li>
+            Ranged Threat Focus
+            <select name="ranged_threat_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+          <li>
+            Ranged Finesse Focus
+            <select name="ranged_finesse_focus">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </li>
+        </ul>
+      </td>
+    </tr>
+      
+       <!-- Fortitude -->
+        <tr>
+          <td>
+            Fortitude
+            <select name="fortitude">
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+            </select>
+          </td>
+          
+          <!-- Endurance -->
+          <td>
+            Endurance
+            <select name="endurance">
+              <option value="0">0</option>
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+            </select>
+          </td>
+          <td>
+            <!-- Focuses for Endurance -->
+            <ul>
+              <li>
+                Vitality Focus
+                <select name="vitality_focus">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </li>
+              <li>
+                Resilience Focus
+                <select name="resilience_focus">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </li>
+            </ul>
+          </td>
+        </tr>
+    
+        <!-- Strength -->
+        <tr>
+          <td></td>
+          <td>
+            Strength
+            <select name="strength">
+              <option value="0">0</option>
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+            </select>
+          </td>
+          <td>
+            <!-- Focuses for Strength -->
+            <ul>
+              <li>
+                Ferocity Focus
+                <select name="ferocity_focus">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </li>
+              <li>
+                Might Focus
+                <select name="might_focus">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </li>
+            </ul>
+          </td>
+        </tr>
+    
+        <!-- Willpower -->
+        <tr>
+          <td></td>
+          <td>
+            Willpower
+            <select name="willpower">
+              <option value="0">0</option>
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+            </select>
+          </td>
+          <td>
+            <!-- Focuses for Willpower -->
+            <ul>
+              <li>
+                Courage Focus
+                <select name="courage_focus">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </li>
+              <li>
+                Resistance Focus
+                <select name="resistance_focus">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </li>
+            </ul>
+          </td>
+        </tr>
+    
+  </table>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>My Eldritch 2nd Edition Character Sheet</title>
+</head>
+<body>
+  <h2>Hit Point Pools</h2>
+  <table class="sheet-table">
+    <tr>
+      <th>Pool</th>
+      <th>Current</th>
+      <th>Max</th>
+    </tr>
+    <tr>
+      <td>Active Defense</td>
+      <td>
+        <input type="number" name="current_active_defense_hp" value="0">
+      </td>
+      <td>
+        <input type="number" name="max_active_defense_hp" readonly>
+      </td>
+    </tr>
+    <tr>
+      <td>Passive Defense</td>
+      <td>
+        <input type="number" name="current_passive_defense_hp" value="0">
+      </td>
+      <td>
+        <input type="number" name="max_passive_defense_hp" readonly>
+      </td>
+    </tr>
+    <tr>
+      <td>Spirit Points</td>
+      <td>
+        <input type="number" name="current_spirit_points" value="0">
+      </td>
+      <td>
+        <input type="number" name="max_spirit_points" readonly>
+      </td>
+    </tr>
+  </table>
+
+  
 </body>
 </html>
+
