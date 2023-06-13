@@ -425,50 +425,22 @@
           </td>
         </tr>
     
+ 
   </table>
-  <!DOCTYPE html>
-<html>
-<head>
-  <title>My Eldritch 2nd Edition Character Sheet</title>
-</head>
-<body>
-  <h2>Hit Point Pools</h2>
-  <table class="sheet-table">
-    <tr>
-      <th>Pool</th>
-      <th>Current</th>
-      <th>Max</th>
-    </tr>
-    <tr>
-      <td>Active Defense</td>
-      <td>
-        <input type="number" name="current_active_defense_hp" value="0">
-      </td>
-      <td>
-        <input type="number" name="max_active_defense_hp" readonly>
-      </td>
-    </tr>
-    <tr>
-      <td>Passive Defense</td>
-      <td>
-        <input type="number" name="current_passive_defense_hp" value="0">
-      </td>
-      <td>
-        <input type="number" name="max_passive_defense_hp" readonly>
-      </td>
-    </tr>
-    <tr>
-      <td>Spirit Points</td>
-      <td>
-        <input type="number" name="current_spirit_points" value="0">
-      </td>
-      <td>
-        <input type="number" name="max_spirit_points" readonly>
-      </td>
-    </tr>
-  </table>
+  <div class="statblock">
+    <label for="active_defense">Active Defense</label>
+    <input type="text" name="active_defense" readonly>
+</div>
 
-  
+<div class="statblock">
+    <label for="passive_defense">Passive Defense</label>
+    <input type="text" name="passive_defense" readonly>
+</div>
+
+<div class="statblock">
+    <label for="spirit_points">Spirit Points</label>
+    <input type="text" name="spirit_points" readonly>
+</div> 
 </body>
 </html>
 
