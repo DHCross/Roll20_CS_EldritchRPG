@@ -1,437 +1,482 @@
-  <h1>My Indie Character Sheet</h1>
-  <p>This is a character sheet for my indie RPG system.</p>
+<h1>Eldritch RPG 2nd Edition</h1>
+<p>Plyphyny System</p>
+
+<!-- Defense and Spirit Section -->
+<div id="defense-spirit-section" class="defense-spirit-container">
+  <h2>Defense and Spirit</h2>
+    
+  <div class="defense-row">
+    <div class="defense-col">
+       <label>Active Defense:</label>
+       <input type="number" name="attr_active_defense" value="" readonly>
+    </div>
+    <div class="defense-col">
+       <label>Passive Defense:</label>
+       <input type="number" name="attr_passive_defense" value="" readonly>
+    </div>
+    <div class="defense-col">
+       <label>Spirit Points:</label>
+       <input type="number" name="attr_spirit_points" value="" readonly>
+    </div>
+  </div>
+</div>
+  
+<!-- Attributes Section -->
+<div id="attributes-section">
   <h2>Attributes</h2>
-  <table class="sheet-table">
-    <tr>
-      <th>Ability</th>
-      <th>Specialization</th>
-      <th>Focus</th>
-    </tr>    
-    <!-- Competence -->
-    <tr>
-      <td>
-        Competence
-        <select name="attr_competence">
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-          <option value="12">12</option>
-        </select>
-      </td>
-      
-      <!-- Adroitness -->
-      <td>
-        Adroitness
-        <select name="attr_adroitness">
-          <option value="0">0</option>
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-        </select>
-      </td>
-      <td>
-        <!-- Focuses for Adroitness -->
-        <ul>
-          <li>
-            Skulduggery Focus
-            <select name="attr_skulduggery_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-          <li>
-            Cleverness Focus
-            <select name="attr_cleverness_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-        </ul>
-      </td>
-    </tr>
-
-    <!-- Expertise -->
-    <tr>
-      <td></td>
-      <td>
-        Expertise
-        <select name="attr_expertise">
-          <option value="0">0</option>
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-        </select>
-      </td>
-      <td>
-        <!-- Focuses for Expertise -->
-        <ul>
-          <li>
-            Wizardry Focus
-            <select name="attr_wizardry_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-          <li>
-            Theurgy Focus
-            <select name="attr_theurgy_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-        </ul>
-      </td>
-    </tr>
-
-    <!-- Perception -->
-    <tr>
-      <td></td>
-      <td>
-        Perception
-        <select name="attr_perception">
-          <option value="0">0</option>
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-        </select>
-      </td>
-      <td>
-        <!-- Focuses for Perception -->
-        <ul>
-          <li>
-            Alertness Focus
-            <select name="attr_alertness_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-          <li>
-            Perspicacity Focus
-            <select name="attr_perspicacity_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-        </ul>
-      </td>
-    </tr>
-
-    <!-- Prowess -->
-    <tr>
-      <td>
-        Prowess
-        <select name="attr_prowess">
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-          <option value="12">12</option>
-        </select>
-      </td>
-      
-      <!-- Agility -->
-      <td>
-        Agility
-        <select name="attr_agility">
-          <option value="0">0</option>
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-        </select>
-      </td>
-      <td>
-        <!-- Focuses for Agility -->
-        <ul>
-          <li>
-            Speed Focus
-            <select name="attr_speed_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-          <li>
-            Reaction Focus
-            <select name="attr_reaction_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-        </ul>
-      </td>
-    </tr>
-
-    <!-- Melee -->
-    <tr>
-      <td></td>
-      <td>
-        Melee
-        <select name="attr_melee">
-          <option value="0">0</option>
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-        </select>
-      </td>
-      <td>
-        <!-- Focuses for Melee -->
-        <ul>
-          <li>
-            Threat Focus
-            <select name="attr_threat_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-          <li>
-            Finesse Focus
-            <select name="attr_finesse_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-        </ul>
-      </td>
-    </tr>
-
-    <!-- Precision -->
-    <tr>
-      <td></td>
-      <td>
-        Precision
-        <select name="attr_precision">
-          <option value="0">0</option>
-          <option value="4">4</option>
-          <option value="6">6</option>
-          <option value="8">8</option>
-          <option value="10">10</option>
-        </select>
-      </td>
-      <td>
-        <!-- Focuses for Precision -->
-        <ul>
-          <li>
-            Ranged Threat Focus
-            <select name="attr_ranged_threat_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-          <li>
-            Ranged Finesse Focus
-            <select name="attr_ranged_finesse_focus">
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </li>
-        </ul>
-      </td>
-    </tr>
-      
-       <!-- Fortitude -->
-        <tr>
-          <td>
-            Fortitude
-            <select name="attr_fortitude">
-              <option value="4">4</option>
-              <option value="6">6</option>
-              <option value="8">8</option>
-              <option value="10">10</option>
-              <option value="12">12</option>
-            </select>
-          </td>
-          
-          <!-- Endurance -->
-          <td>
-            Endurance
-            <select name="attr_endurance">
-              <option value="0">0</option>
-              <option value="4">4</option>
-              <option value="6">6</option>
-              <option value="8">8</option>
-              <option value="10">10</option>
-            </select>
-          </td>
-          <td>
-            <!-- Focuses for Endurance -->
-            <ul>
-              <li>
-                Vitality Focus
-                <select name="attr_vitality_focus">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </li>
-              <li>
-                Resilience Focus
-                <select name="attr_resilience_focus">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </li>
-            </ul>
-          </td>
-        </tr>
-    
-        <!-- Strength -->
-        <tr>
-          <td></td>
-          <td>
-            Strength
-            <select name="attr_strength">
-              <option value="0">0</option>
-              <option value="4">4</option>
-              <option value="6">6</option>
-              <option value="8">8</option>
-              <option value="10">10</option>
-            </select>
-          </td>
-          <td>
-            <!-- Focuses for Strength -->
-            <ul>
-              <li>
-                Ferocity Focus
-                <select name="attr_ferocity_focus">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </li>
-              <li>
-                Might Focus
-                <select name="attr_might_focus">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </li>
-            </ul>
-          </td>
-        </tr>
-    
-        <!-- Willpower -->
-        <tr>
-          <td></td>
-          <td>
-            Willpower
-            <select name="attr_willpower">
-              <option value="0">0</option>
-              <option value="4">4</option>
-              <option value="6">6</option>
-              <option value="8">8</option>
-              <option value="10">10</option>
-            </select>
-          </td>
-          <td>
-            <!-- Focuses for Willpower -->
-            <ul>
-              <li>
-                Courage Focus
-                <select name="attr_courage_focus">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </li>
-              <li>
-                Resistance Focus
-                <select name="attr_resistance_focus">
-                  <option value="0">0</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                </select>
-              </li>
-            </ul>
-          </td>
-        </tr>
-    
- 
-  </table>
-  <div class="statblock">
-    <label for="active_defense">Active Defense</label>
-    <input type="text" name="active_defense" readonly>
+  <!-- Rest of the attribute inputs -->
 </div>
+<table class="sheet-table">
+  <!-- Attribute table content here -->
+  <tr>
+    <th>Ability</th>
+    <th>Specialization</th>
+    <th>Focus</th>
+  </tr>    
+  <!-- Competence -->
+  <tr>
+    <td>
+      Competence
+      <select name="attr_competence">
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+      </select>
+    </td>
+    
+    <!-- Adroitness -->
+    <td>
+      Adroitness
+      <select name="attr_adroitness">
+        <option value="0">0</option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+      </select>
+    </td>
+    <td>
+      <!-- Focuses for Adroitness -->
+      <ul>
+        <li>
+          Skulduggery Focus
+          <select name="attr_skulduggery_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+        <li>
+          Cleverness Focus
+          <select name="attr_cleverness_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+      </ul>
+    </td>
+  </tr>
 
-<div class="statblock">
-    <label for="passive_defense">Passive Defense</label>
-    <input type="text" name="passive_defense" readonly>
-</div>
+  <!-- Expertise -->
+  <tr>
+    <td></td>
+    <td>
+      Expertise
+      <select name="attr_expertise">
+        <option value="0">0</option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+      </select>
+    </td>
+    <td>
+      <!-- Focuses for Expertise -->
+      <ul>
+        <li>
+          Wizardry Focus
+          <select name="attr_wizardry_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+        <li>
+          Theurgy Focus
+          <select name="attr_theurgy_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+      </ul>
+    </td>
+  </tr>
 
-<div class="statblock">
-    <label for="spirit_points">Spirit Points</label>
-    <input type="text" name="spirit_points" readonly>
-</div> 
+  <!-- Perception -->
+  <tr>
+    <td></td>
+    <td>
+      Perception
+      <select name="attr_perception">
+        <option value="0">0</option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+      </select>
+    </td>
+    <td>
+      <!-- Focuses for Perception -->
+      <ul>
+        <li>
+          Alertness Focus
+          <select name="attr_alertness_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+        <li>
+          Perspicacity Focus
+          <select name="attr_perspicacity_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+      </ul>
+    </td>
+  </tr>
+
+  <!-- Prowess -->
+  <tr>
+    <td>
+      Prowess
+      <select name="attr_prowess">
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+      </select>
+    </td>
+    
+    <!-- Agility -->
+    <td>
+      Agility
+      <select name="attr_agility">
+        <option value="0">0</option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+      </select>
+    </td>
+    <td>
+      <!-- Focuses for Agility -->
+      <ul>
+        <li>
+          Speed Focus
+          <select name="attr_speed_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+        <li>
+          Reaction Focus
+          <select name="attr_reaction_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+      </ul>
+    </td>
+  </tr>
+
+  <!-- Melee -->
+  <tr>
+    <td></td>
+    <td>
+      Melee
+      <select name="attr_melee">
+        <option value="0">0</option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+      </select>
+    </td>
+    <td>
+      <!-- Focuses for Melee -->
+      <ul>
+        <li>
+          Threat Focus
+          <select name="attr_threat_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+        <li>
+          Finesse Focus
+          <select name="attr_finesse_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+      </ul>
+    </td>
+  </tr>
+
+  <!-- Precision -->
+  <tr>
+    <td></td>
+    <td>
+      Precision
+      <select name="attr_precision">
+        <option value="0">0</option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+      </select>
+    </td>
+    <td>
+      <!-- Focuses for Precision -->
+      <ul>
+        <li>
+          Ranged Threat Focus
+          <select name="attr_ranged_threat_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+        <li>
+          Ranged Finesse Focus
+          <select name="attr_ranged_finesse_focus">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </li>
+      </ul>
+    </td>
+  </tr>
+    
+     <!-- Fortitude -->
+      <tr>
+        <td>
+          Fortitude
+          <select name="attr_fortitude">
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+          </select>
+        </td>
+        
+        <!-- Endurance -->
+        <td>
+          Endurance
+          <select name="attr_endurance">
+            <option value="0">0</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+        </td>
+        <td>
+          <!-- Focuses for Endurance -->
+          <ul>
+            <li>
+              Vitality Focus
+              <select name="attr_vitality_focus">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </li>
+            <li>
+              Resilience Focus
+              <select name="attr_resilience_focus">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </li>
+          </ul>
+        </td>
+      </tr>
+  
+      <!-- Strength -->
+      <tr>
+        <td></td>
+        <td>
+          Strength
+          <select name="attr_strength">
+            <option value="0">0</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+        </td>
+        <td>
+          <!-- Focuses for Strength -->
+          <ul>
+            <li>
+              Ferocity Focus
+              <select name="attr_ferocity_focus">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </li>
+            <li>
+              Might Focus
+              <select name="attr_might_focus">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </li>
+          </ul>
+        </td>
+      </tr>
+  
+      <!-- Willpower -->
+      <tr>
+        <td></td>
+        <td>
+          Willpower
+          <select name="attr_willpower">
+            <option value="0">0</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+          </select>
+        </td>
+        <td>
+          <!-- Focuses for Willpower -->
+          <ul>
+            <li>
+              Courage Focus
+              <select name="attr_courage_focus">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </li>
+            <li>
+              Resistance Focus
+              <select name="attr_resistance_focus">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </li>
+          </ul>
+        </td>
+      </tr>
+</table>
+
+<script>
+on('change:prowess change:agility change:melee', (event) => {
+  updateHitPointPools();
+});
+
+function updateHitPointPools() {
+  const prowess = parseInt(getAttr('prowess')) || 0;
+  const agility = parseInt(getAttr('agility')) || 0;
+  const melee = parseInt(getAttr('melee')) || 0;
+  const sum = prowess + agility + melee;
+
+  setAttrs({
+    hit_point_pool: sum.toString()
+  });
+}
+
+on('change:competence change:willpower', (event) => {
+  updateSpiritPoints();
+});
+
+function updateSpiritPoints() {
+  const competence = parseInt(getAttr('competence')) || 0;
+  const willpower = parseInt(getAttr('willpower')) || 0;
+  const sum = competence + willpower;
+
+  setAttrs({
+    spirit_points: sum.toString()
+  });
+}
+</script>
+
+
+
+
 

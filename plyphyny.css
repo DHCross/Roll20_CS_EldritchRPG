@@ -1,3 +1,21 @@
+/* Global styles */
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Container styles */
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Table styles */
+
 .sheet-table {
   width: 100%;
   border-collapse: collapse;
@@ -68,3 +86,31 @@
 .sheet-table tr:nth-child(8) td {
   width: 25%;
 }
+
+/* Defense and Spirit styles */
+
+.defense-spirit-section {
+  margin-bottom: 20px;
+}
+
+.defense-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.defense-row label {
+  font-weight: bold;
+}
+
+.defense-row input[type="number"] {
+  width: 80px;
+}
+
+/* Attributes styles */
+
+.attributes-section {
+  margin-bottom: 20px;
+}
+
+/* Other styles... */
