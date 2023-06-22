@@ -1,32 +1,7 @@
 <h1>Eldritch RPG 2nd Edition</h1>
 <p>Plyphyny System</p>
 
-<!-- Defense and Spirit Section -->
-<div id="defense-spirit-section" class="defense-spirit-container">
-  <h2>Defense and Spirit</h2>
-    
-  <div class="defense-row">
-    <div class="defense-col">
-       <label>Active Defense:</label>
-       <input type="number" name="attr_active_defense" value="" readonly>
-    </div>
-    <div class="defense-col">
-       <label>Passive Defense:</label>
-       <input type="number" name="attr_passive_defense" value="" readonly>
-    </div>
-    <div class="defense-col">
-       <label>Spirit Points:</label>
-       <input type="number" name="attr_spirit_points" value="" readonly>
-    </div>
-  </div>
-</div>
-  
-<!-- Attributes Section -->
-<div id="attributes-section">
-  <h2>Attributes</h2>
-  <!-- Rest of the attribute inputs -->
-</div>
-<table class="sheet-table">
+
   <!-- Attribute table content here -->
   <tr>
     <th>Ability</th>
@@ -446,8 +421,8 @@
 </table>
 
 <script>
-on('change:prowess change:agility change:melee', (event) => {
-  updateHitPointPools();
+on("change:agility change:melee change:fortitude change:endurance change:strength", function(eventInfo) {
+  updateDefensePools();
 });
 
 function updateHitPointPools() {
